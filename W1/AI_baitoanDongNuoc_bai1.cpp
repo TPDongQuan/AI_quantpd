@@ -13,7 +13,6 @@ int main()
 {
     int a, b, target;
     /// viet ham nhap a,b, target tu ban phim
-    // CODE HERE
     Input(a, b, target);
     BFS(a, b, target);
     return 0;
@@ -39,7 +38,6 @@ void printresult(map<jugs, jugs> node, jugs currentNode)
     printresult(node, node[currentNode]);
     cout << currentNode.first << " " << currentNode.second << endl;
 }
-
 void BFS(int a, int b, int target)
 {
     map<jugs, int> checkedList; // kiem tra cac node da duyet: 1 da duyet, 0 chua duyet (default = 0)
@@ -60,7 +58,6 @@ void BFS(int a, int b, int target)
         if (currentNode.first == target || currentNode.second == target)
         {
             isSolvable = true;
-            // CODE HERE
             if (currentNode.first == target && currentNode.second != 0)
             {
                 node[{currentNode.first, 0}] = currentNode;
@@ -83,7 +80,6 @@ void BFS(int a, int b, int target)
             node[{a, currentNode.second}] = currentNode; // Set father
         }
         // fill into jug 2
-        // CODE HERE
 
         if (checkedList[{currentNode.first, b}] != 1)
         {
@@ -112,8 +108,6 @@ void BFS(int a, int b, int target)
             }
         }
         // from jug 2 to j1
-        // CODE HERE
-
         int unfilledSpace2 = a - currentNode.first;
         if (currentNode.second >= unfilledSpace2)
         {
