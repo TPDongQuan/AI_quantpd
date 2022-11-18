@@ -89,8 +89,7 @@ void playGame(int board[][3]){
 				cout << "Vi tri danh";
 			}
 		}
-        printBoard(board);
-        
+     
         // AI danh
         // find best move
         pair<int, int> bestMove = findBestMove(board);
